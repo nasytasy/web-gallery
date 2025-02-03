@@ -1,0 +1,17 @@
+{
+    "name": "web-gallery-node",
+    "version": "1.0.0",
+    "description": "A simple web gallery with Node.js and AJAX",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "jest"
+    },
+    "dependencies": {
+        "express": "^4.21.2"
+    },
+    "devDependencies": {
+        "jest": "^29.0.0",
+        "supertest": "^6.0.0"
+    }
+}

@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "src": "images/undefined - Imgur (1).jpg",
+        "title": "White marble",
+        "author": "John Doe",
+        "resolution": "1920x1080"
+    },
+    {
+        "id": 2,
+        "src": "images/undefined - Imgur (2).jpg",
+        "title": "Blue Ivy",
+        "author": "Jane Smith",
+        "resolution": "2560x1440"
+    },
+    {
+        "id": 3,
+        "src": "images/undefined - Imgur (3).jpg",
+        "title": "Fire Temple",
+        "author": "David Brown",
+        "resolution": "1920x1200"
+    },
+    {
+        "id": 4,
+        "src": "images/undefined - Imgur (4).jpg",
+        "title": "Lavender",
+        "author": "Alice Green",
+        "resolution": "3840x2160"
+    },
+    {
+        "id": 5,
+        "src": "images/undefined - Imgur (5).jpg",
+        "title": "Techno",
+        "author": "Michael Johnson",
+        "resolution": "1920x1080"
+    },
+    {
+        "id": 6,
+        "src": "images/undefined - Imgur (6).jpg",
+        "title": "Rose",
+        "author": "Emily White",
+        "resolution": "2560x1440"
+    },
+    {
+        "id": 7,
+        "src": "images/undefined - Imgur (7).jpg",
+        "title": "Lotus",
+        "author": "Chris Adams",
+        "resolution": "1920x1080"
+    },
+    {
+        "id": 8,
+        "src": "images/undefined - Imgur (8).jpg",
+        "title": "Autumn Forest Canopy",
+        "author": "Rye",
+        "resolution": "1920x1200"
+    },
+    {
+        "id": 9,
+        "src": "images/undefined - Imgur (9).jpg",
+        "title": "Cleopatra",
+        "author": "Liam Scott",
+        "resolution": "3840x2160"
+    }
+
+
+]

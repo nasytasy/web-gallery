@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Gallery API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .endpoint {
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .code {
+            background: #212529;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .error {
+            color: red;
+        }
+        .note {
+            background: #262f31;
+            padding: 10px;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Web Gallery API Documentation</h1>
+    <p>The **Web Gallery API** is a RESTful API that allows users to manage a collection of images and their comments.</p>
+
+    <h2>Base URL</h2>
+    <div class="endpoint">
+        <strong>http://localhost:400</strong>
+    </div>
+
+    <h2>Endpoints</h2>
+
+    <h3>Get All Products</h3>
+    <div class="endpoint">
+        <strong>GET</strong> <code>/products.json</code>
+    </div>
+    <p>Fetches the full list of available products (images).</p>
+    <h4>Response Example:</h4>
+    <div class="code">
+        [
+            {
+                "id": 1,
+                "src": "images/product_1.jpg",
+                "title": "White Marble",
+                "author": "John Doe",
+                "resolution": "1920x1080"
+            },
+            {
+                "id": 2,
+                "src": "images/product_2.jpg",
+                "title": "Sunset View",
+                "author": "Jane Doe",
+                "resolution": "2560x1440"
+            }
+        ]
+    </div>
+
+    <h3>Get All Comments</h3>
+    <div class="endpoint">
+        <strong>GET</strong> <code>/comments.json</code>
+    </div>
+    <p>Fetches all comments for all products.</p>
+    <h4>Response Example:</h4>
+    <div class="code">
+        {
+            "1": [
+                { "name": "Alice", "text": "Beautiful image!" },
+                { "name": "Bob", "text": "Amazing shot!" }
+            ],
+            "2": [
+                { "name": "Charlie", "text": "Stunning colors." }
+            ]
+        }
+    </div>
+
+    <h3>Add a New Product</h3>
+    <div class="endpoint">
+        <strong>POST</strong> <code>/add-product</code>
+    </div>
+    <p>Adds a new product, including an image upload.</p>
+    <h4>Request Body:</h4>
+    <div class="code">
+        {
+            "title": "Mountain View",
+            "author": "David Smith",
+            "resolution": "3840x2160",
+            "imageData": "data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+        }
+    </div>
+    <h4>Response Example:</h4>
+    <div class="code">
+        {
+            "success": true,
+            "message": "Product added successfully."
+        }
+    </div>
+
+    <h3>Add a Comment</h3>
+    <div class="endpoint">
+        <strong>POST</strong> <code>/add-comment</code>
+    </div>
+    <p>Adds a new comment to a specific product.</p>
+    <h4>Request Body:</h4>
+    <div class="code">
+        {
+            "productId": 1,
+            "name": "Emma",
+            "text": "This is a fantastic photo!"
+        }
+    </div>
+    <h4>Response Example:</h4>
+    <div class="code">
+        {
+            "success": true,
+            "message": "Comment added successfully."
+        }
+    </div>
+
+    <h2>Error Handling</h2>
+    <p>The API uses standard HTTP response codes:</p>
+    <ul>
+        <li><strong>200 OK</strong> - Request was successful.</li>
+        <li class="error"><strong>400 Bad Request</strong> - Missing or incorrect request data.</li>
+        <li class="error"><strong>404 Not Found</strong> - Requested resource (products.json/comments.json) is missing.</li>
+        <li class="error"><strong>500 Internal Server Error</strong> - Server-side processing error.</li>
+    </ul>
+
+    <h2>Usage Notes</h2>
+    <div class="note">
+        - Ensure the server is running at <strong>http://localhost:400</strong>.<br>
+        - Use `application/json` for all `POST` requests.<br>
+        - Uploaded images are stored in `/public/images/`.<br>
+        - Each new product gets an **incremental ID**.<br>
+        - `comments.json` initializes an empty array for new products.
+    </div>
+
+   
+    <p>This API enables a simple gallery system where users can browse, upload, and comment on images dynamically.</p>
+   
+</div>
+
+</body>
+</html>
